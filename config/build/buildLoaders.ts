@@ -31,5 +31,10 @@ export const buildLoaders = (
         ],
     };
 
-    return [tsLoader, cssLoader];
+    const svgLoader = {
+        test: /\.svg$/,
+        use: "@svgr/webpack",
+    };
+
+    return [tsLoader, cssLoader, svgLoader];
 };
