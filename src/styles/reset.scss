@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
-.app {
-    background-color: gray;
+input,
+select,
+button,
+textarea {
+    margin: 0;
+    font: inherit;
 }
