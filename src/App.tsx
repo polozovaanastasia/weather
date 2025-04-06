@@ -1,21 +1,19 @@
+import DarkThemeIcon from "assets/icons/DarkThemeIcon.svg";
+import LightThemeIcon from "assets/icons/LightThemeIcon.svg";
+import { UIButton, UIButtonType } from "components/UIButton/UIButton";
+import { useTheme } from "hooks/useTheme";
+import { AboutPageLazy } from "pages/AboutPage/AboutPage.lazy";
+import { MainPageLazy } from "pages/MainPage/MainPage.lazy";
 import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import DarkThemeIcon from "./assets/icons/DarkThemeIcon.svg";
-import LightThemeIcon from "./assets/icons/LightThemeIcon.svg";
-import {
-    UIButton,
-    UIButtonType,
-} from "./components/Counter/UI/UIButton/UIButton";
-import { useTheme } from "./hooks/useTheme";
-import { AboutPageLazy } from "./pages/AboutPage/AboutPage.lazy";
-import { MainPageLazy } from "./pages/MainPage/MainPage.lazy";
-import { Themes } from "./theme/themeContext";
+import { Themes } from "theme/themeContext";
+import { classNames } from "utils/classNames";
 
 export const App = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames("app", {}, [theme])}>
             App component
             <br />
             <Link to="/">MainPage</Link>

@@ -1,4 +1,4 @@
-import { classNames } from "../../../../utils/classNames";
+import { classNames } from "../../utils/classNames";
 import * as cls from "./UIButton.module.scss";
 
 export enum UIButtonType {
