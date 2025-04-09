@@ -1,0 +1,55 @@
+.ui-input {
+    display: flex;
+    gap: 4px;
+    padding: 13px 8px;
+    border-radius: 7px;
+    background-color: var(--input-bg-color);
+    color: var(--main-font-color);
+    cursor: text;
+
+    &:focus,
+    &:focus-within {
+        background-color: var(--input-bg-color_focus);
+
+        & .ui-input__control {
+            background-color: var(--input-bg-color_focus);
+        }
+    }
+
+    &__control {
+        width: 100%;
+        border: none;
+        background-color: var(--input-bg-color);
+        color: inherit;
+
+        &:focus {
+            background-color: var(--input-bg-color_focus);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__addon_left,
+    &__addon_right,
+    button {
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    &_disabled {
+        background-color: var(--input-bg-color_disabled);
+        color: var(--input-color_disabled);
+        cursor: default;
+
+        & .ui-input__control {
+            background-color: var(--input-bg-color_disabled);
+
+            &::placeholder {
+                color: var(--input-color_disabled);
+            }
+        }
+    }
+}
